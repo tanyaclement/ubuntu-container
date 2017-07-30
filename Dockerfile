@@ -36,7 +36,9 @@ python3-pip \
 ipython \
 ipython-notebook \
 python-numpy-dev \
-python-matplotlib
+python-matplotlib \
+&& python -m pip install -U pip \
+&& python3 -m pip install -U pip
 
 COPY ./requirements.txt /var/local/
 RUN pip install -qr /var/local/requirements.txt
