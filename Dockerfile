@@ -15,6 +15,7 @@ git \
 zip \
 unzip \
 nano \
+youtube-dl \
 software-properties-common \
 build-essential \
 libffi-dev \
@@ -29,6 +30,18 @@ python-pip \
 ipython \
 ipython-notebook \
 python-numpy-dev \
-python-matplotlib
+python-matplotlib \
+&& python -m pip install -U pip \
+&& pip install -U \
+setuptools \
+requests \
+numpy \
+pandas \
+matplotlib \
+scipy \
+sklearn \
+jupyter \
+jupyterlab \
+&& jupyter serverextension enable --py jupyterlab --sys-prefix
 
 WORKDIR /sharedfolder
