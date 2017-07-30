@@ -5,11 +5,6 @@ MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 EXPOSE 8889
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
-## Installing FFmpeg with mp3 support
-RUN add-apt-repository -y ppa:mc3man/trusty-media \
-&& apt-get update -y \
-&& apt-get install -y ffmpeg
-
 ## Installing common GNU/Linux dependencies
 RUN apt-get update && apt-get install -y \
 wget \
@@ -50,6 +45,11 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python3 -m ipykernel install \
 && python2 -m pip install ipykernel \
 && python2 -m ipykernel install
+
+## Installing FFmpeg with mp3 support
+#RUN add-apt-repository -y ppa:mc3man/trusty-media \
+#&& apt-get update -y \
+#&& apt-get install -y ffmpeg
 
 WORKDIR /sharedfolder/
 
