@@ -20,6 +20,11 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl
 
+## Installing FFmpeg with mp3 support
+RUN add-apt-repository -y ppa:mc3man/trusty-media \
+&& apt-get update -y \
+&& apt-get install -y ffmpeg
+
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
 python-dev \
@@ -45,11 +50,6 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python3 -m ipykernel install \
 && python2 -m pip install ipykernel \
 && python2 -m ipykernel install
-
-## Installing FFmpeg with mp3 support
-#RUN add-apt-repository -y ppa:mc3man/trusty-media \
-#&& apt-get update -y \
-#&& apt-get install -y ffmpeg
 
 WORKDIR /sharedfolder/
 
