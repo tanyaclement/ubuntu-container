@@ -32,23 +32,18 @@ python-dev \
 python2.7 \
 python3 \
 python-pip \
+python3-pip \
 ipython \
 ipython-notebook \
 python-numpy-dev \
-python-matplotlib \
-&& python -m pip install -U pip \
-&& pip install -U \
-setuptools \
-requests \
-numpy \
-pandas \
-matplotlib \
-scipy \
-sklearn \
-jupyter \
-jupyterlab \
-&& jupyter serverextension enable --py jupyterlab --sys-prefix
+python-matplotlib
+
+COPY ./requirements.txt /var/local/
+RUN pip install -qr /var/local/requirements.txt
+RUN pip3 install -qr /var/local/requirements.txt
+RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 WORKDIR /sharedfolder
 
 CMD jupyter notebook --ip 0.0.0.0 --port 8889 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''
+#CMD jupyter lab --ip 0.0.0.0 --port 8889 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''

@@ -1,0 +1,9 @@
+setuptools
+requests
+numpy
+pandas
+matplotlib
+scipy
+sklearn
+jupyter
+jupyterlab
