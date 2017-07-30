@@ -8,9 +8,9 @@ EXPOSE 8889
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
 # Install FFmpeg with mp3 support
-RUN add-apt-repository -y ppa:mc3man/trusty-media \
-&& apt-get update -y \
-&& apt-get install -y ffmpeg gstreamer0.10-ffmpeg
+#RUN add-apt-repository -y ppa:mc3man/trusty-media \
+#&& apt-get update -y \
+#&& apt-get install -y ffmpeg gstreamer0.10-ffmpeg
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
