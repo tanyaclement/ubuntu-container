@@ -20,11 +20,6 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl
 
-## Installing FFmpeg with mp3 support
-RUN add-apt-repository -y ppa:mc3man/trusty-media \
-&& apt-get update -y \
-&& apt-get install -y ffmpeg
-
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
 python-dev \
