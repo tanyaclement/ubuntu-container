@@ -20,8 +20,12 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl \
 man \
-manpages-posix-dev \
-libav-tools
+manpages-posix-dev
+
+## Installing FFmpeg
+add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt -y update \
+&& apt install -y ffmpeg libav-tools x264 x265
 
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
