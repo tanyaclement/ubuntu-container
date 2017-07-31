@@ -20,7 +20,8 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl \
 man \
-manpages-posix-dev
+manpages-posix-dev \
+libav-tools
 
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
