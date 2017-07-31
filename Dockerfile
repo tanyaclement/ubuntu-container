@@ -18,7 +18,9 @@ software-properties-common \
 build-essential \
 libffi-dev \
 libssl-dev \
-libimage-exiftool-perl
+libimage-exiftool-perl \
+man \
+manpages-posix-dev
 
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
