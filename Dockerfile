@@ -54,7 +54,7 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python2 -m ipykernel install
 
 ## Setting UTF-8 as default encoding format for terminal
-RUN apt-get install language-pack-en
+RUN apt-get install -y language-pack-en
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
