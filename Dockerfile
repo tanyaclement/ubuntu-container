@@ -20,7 +20,10 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl \
 man \
-manpages-posix-dev
+manpages-posix-dev \
+wamerican-large
+
+RUN rm -f /usr/share/dict/words && cp /usr/share/dict/american-english-large /usr/share/dict/words
 
 ## Installing FFmpeg
 RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
