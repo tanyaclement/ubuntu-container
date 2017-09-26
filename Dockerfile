@@ -49,7 +49,7 @@ python-matplotlib \
 COPY ./requirements.txt /var/local/
 RUN pip install -qr /var/local/requirements.txt \
 && pip3 install -qr /var/local/requirements.txt \
-&& python2 -m nltk.downloader -d /usr/local/share/nltk_data all \
+&& python -m nltk.downloader -d /usr/local/share/nltk_data all \
 && python3 -m nltk.downloader -d /usr/local/share/nltk_data all
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
