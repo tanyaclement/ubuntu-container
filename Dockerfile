@@ -20,6 +20,7 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl \
 man \
+wamerican \
 manpages-posix-dev
 
 ## Installing FFmpeg
@@ -53,7 +54,10 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python2 -m pip install ipykernel \
 && python2 -m ipykernel install
 
+RUN wget  -O /usr/share/dict/words
+
 WORKDIR /sharedfolder/
 
 CMD jupyter notebook --ip 0.0.0.0 --port 8889 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''
+
 #CMD jupyter lab --ip 0.0.0.0 --port 8889 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''
