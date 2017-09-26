@@ -20,8 +20,10 @@ libffi-dev \
 libssl-dev \
 libimage-exiftool-perl \
 man \
-wamerican \
-manpages-posix-dev
+manpages-posix-dev \
+wamerican-large
+
+RUN rm -f /usr/share/dict/words && cp /usr/share/dict/american-english-large /usr/share/dict/words
 
 ## Installing FFmpeg
 RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
@@ -54,7 +56,11 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python2 -m pip install ipykernel \
 && python2 -m ipykernel install
 
-RUN wget  -O /usr/share/dict/words
+## Setting UTF-8 as default encoding format for terminal
+RUN apt-get install -y language-pack-en
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 WORKDIR /sharedfolder/
 
