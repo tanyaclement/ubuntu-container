@@ -50,17 +50,23 @@ RUN pip install -qr /var/local/requirements.txt
 RUN pip3 install -qr /var/local/requirements.txt
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
-## Installing Python2 and Python3 kernels for Jupyter
+## Installing Python2 and Python3 kernels for Jupyter and downloading NLTK data
 RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python3 -m ipykernel install \
 && python2 -m pip install ipykernel \
-&& python2 -m ipykernel install
+&& python2 -m ipykernel install \
+&& python2 -m nltk.downloader -d /usr/local/share/nltk_data all \
+&& python3 -m nltk.downloader -d /usr/local/share/nltk_data all
+
+
 
 ## Setting UTF-8 as default encoding format for terminal
 RUN apt-get install -y language-pack-en
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+
+RUN python -m nltk.downloader -d /usr/local/share/nltk_data all
 
 WORKDIR /sharedfolder/
 
