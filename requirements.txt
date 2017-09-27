@@ -7,5 +7,4 @@ scipy
 sklearn
 jupyter
 jupyterlab
-nltk
 textblob

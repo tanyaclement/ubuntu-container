@@ -44,12 +44,12 @@ python-matplotlib \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
-
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
 RUN pip install -qr /var/local/requirements.txt \
-&& pip3 install -qr /var/local/requirements.txt
-RUN python3 -m nltk.downloader -d /usr/local/share/nltk_data all
+&& pip3 install -qr /var/local/requirements.txt \
+&& pip3 install nltk \
+&& python3 -m nltk.downloader -d /usr/local/share/nltk_data all
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
