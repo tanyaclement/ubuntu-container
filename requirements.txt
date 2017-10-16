@@ -9,3 +9,4 @@ jupyter
 jupyterlab
 textblob
 bs4
+lxml
