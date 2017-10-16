@@ -8,3 +8,4 @@ sklearn
 jupyter
 jupyterlab
 textblob
+bs4
